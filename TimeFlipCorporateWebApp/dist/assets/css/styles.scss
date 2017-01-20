@@ -1,0 +1,242 @@
+
+$header_height: 50px;
+$header_background: #FFFFFF;
+$sidebar_width: 200px;
+$sidebar_background: #343268;
+
+$logo_background: #343268;
+
+$content_background: #F3F3F8;
+
+$sidebar_link_color: #6562A3;
+$sidebar_selected_link_background: #48468E;
+
+$user_name_color: #858598;
+
+//$container_width: 960px;
+$container_width: 780px;
+
+.corporate_template{
+  width: 100vw;
+  height: 100vh;
+
+  .left_sidebar{
+    height: 100%;
+    max-height: 100%;
+    overflow-y: auto;
+    display: inline-block;
+    vertical-align: top;
+    width: $sidebar_width;
+    background: $sidebar_background;
+
+    .logo_placeholder{
+      height: $header_height;
+      width: 100%;
+      background: $logo_background;
+      padding: 4px;
+
+      .logo{
+        height: 100%;
+      }
+
+    }
+
+    .sidebar_placeholder{
+      height: calc(100% - #{$header_height});
+      max-height: calc(100% - #{$header_height});
+      overflow-y: auto;
+      width: 100%;
+
+      .sidebar{
+        width: 100%;
+        .links_placeholder{
+          width: 100%;
+          margin-top: 30px;
+          .links{
+            width: 100%;
+            .link{
+              width: 100%;
+              padding: 15px;
+              font-size: 18px;
+              color: $sidebar_link_color;
+              cursor: pointer;
+              &.selected, &:hover{
+                font-weight: bold;
+                background-color: $sidebar_selected_link_background;
+                color: white;
+              }
+              &.selected{
+                cursor: default;
+              }
+            }
+
+          }
+
+        }
+      }
+
+    }
+
+  }
+
+  .main_area{
+    display: inline-block;
+    vertical-align: top;
+    width: calc(100% - #{$sidebar_width});
+    height: 100%;
+
+    .header{
+      background: $header_background;
+      height: $header_height
+    }
+
+    .content{
+        height: calc(100% - #{$header_height});
+        max-height: calc(100% - #{$header_height});
+        overflow-y: auto;
+        background: $content_background;
+        position: relative;
+    }
+
+  }
+
+}
+
+.users_panel{
+
+  .users_list{
+
+    .user_item{
+      display: inline-block;
+      vertical-align: top;
+      margin: 5px;
+      width: calc(25% - 10px);
+      border-radius: 4px;
+      background-color: white;
+      cursor: pointer;
+
+      .top_placeholder{
+        .avatar_placeholder{
+          padding: 20px;
+          .avatar{
+            width: 100%;
+          }
+        }
+      }
+
+      .medium_placeholder{
+        .name_placeholder{
+
+          .name{
+            font-weight: bold;
+            text-align: center;
+            padding: 5px;
+            color: $user_name_color;
+          }
+
+        }
+      }
+
+      .bottom_placeholder{
+        margin-top: 15px;
+
+        .info_links_placeholder{
+          .info_item{
+            margin-bottom: 10px;
+            color: $user_name_color;
+            text-align: center;
+
+            .icon_placeholder{
+              background-color: #E2E5EE;
+              color: #9098B1;
+              padding: 10px;
+              padding-top: 8px;
+              padding-bottom: 8px;
+              margin-top: 2px;
+              border-radius: 1000px;
+              display: inline-block;
+              margin-right: 10px;
+              vertical-align: top;
+              i{
+                margin-right: 0px !important;
+              }
+            }
+
+            .info_placeholder{
+              display: inline-block;
+              vertical-align: top;
+              color: #A6A7B7;
+              text-align: left;
+              .top{
+
+              }
+              .bottom{
+                font-weight: bold;
+              }
+            }
+
+          }
+        }
+
+      }
+
+      &:hover .medium_placeholder .name_placeholder .name, &:hover .bottom_placeholder .icon_placeholder i{
+        color: #6565FB !important;
+      }
+
+      &:hover{
+        opacity: 0.8;
+      }
+
+    }
+
+  }
+}
+
+.user_panel{
+  background-color: $content_background;
+  width: $container_width;
+  margin: 0 auto;
+  height: 90vh;
+  min-height: 90vh;
+  overflow-y: auto;
+  border-radius: 4px;
+
+  .top{
+
+    .avatar_placeholder{
+        text-align: center;
+        padding: 10px;
+        .avatar{
+          display: inline-block;
+          width: 160px;
+        }
+    }
+
+    .name_placeholder{
+      .name{
+        text-align: center;
+        color: $user_name_color;
+        font-weight: bold;
+      }
+    }
+
+  }
+
+  .bottom{
+
+  }
+
+}
+
+
+
+.container{
+  width: $container_width;
+  margin: 0 auto;
+  padding: 5px;
+}
+
+.search_input_placeholder input{
+  background-color: $content_background !important;
+}
